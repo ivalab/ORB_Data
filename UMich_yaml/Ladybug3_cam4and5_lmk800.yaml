@@ -1,0 +1,132 @@
+%YAML:1.0
+
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# for camera model 2 used in the obs computation
+Camera2.nCols: 630 # 1260 # 1616
+Camera2.nRows: 411 # 822 # 1232
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 199.716592 # 399.433184
+Camera.fy: 199.716592 # 399.433184
+Camera.cx: 324.180976 # 648.361952 # 826.361952
+Camera.cy: 208.334312 # 416.668624 # 621.668624
+
+Camera.k1: 0
+Camera.k2: 0
+Camera.p1: 0
+Camera.p2: 0
+
+Camera.width: 630
+Camera.height: 411
+
+# Camera frames per second 
+Camera.fps: 5.0
+
+# stereo baseline times fx
+Camera.bf: 
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 35
+
+
+#--------------------------------------------------------------------------------------------
+# Stereo Rectification. Only if you need to pre-rectify the images.
+# Camera.fx, .fy, etc must be the same as in LEFT.P
+#--------------------------------------------------------------------------------------------
+LEFT.height: 411
+LEFT.width: 630
+LEFT.D: !!opencv-matrix
+   rows: 1
+   cols: 5
+   dt: d
+   data: [0.0, 0.0, 0.0, 0.0, 0.0]
+LEFT.K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [199.716592, 0.0, 324.180976, 0.0, 199.716592, 208.334312, 0.0, 0.0, 1.0]
+LEFT.R:  !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+LEFT.P:  !!opencv-matrix
+   rows: 3
+   cols: 4
+   dt: d
+   data: [199.716592, 0.0, 324.180976, 0.0, 0.0, 199.716592, 208.334312, 0.0, 0.0, 0.0, 1.0, 0.0]
+
+RIGHT.height: 411
+RIGHT.width: 630
+RIGHT.D: !!opencv-matrix
+   rows: 1
+   cols: 5
+   dt: d
+   data: [0.0, 0.0, 0.0, 0.0, 0.0]
+RIGHT.K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [201.960408, 0.0, 322.635272, 0.0, 201.960408, 198.46476, 0.0, 0.0, 1.0]
+RIGHT.R:  !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+RIGHT.P:  !!opencv-matrix
+   rows: 3
+   cols: 4
+   dt: d
+   data: [201.960408, 0.0, 322.635272, -XXX, 0.0, 201.960408, 198.46476, 0.0, 0.0, 0.0, 1.0, 0.0]
+
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 800
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold for ORB-SLAM 1 (lower less restrictive)			
+ORBextractor.fastTh: 20
+
+# ORB Extractor: Score to sort features. 0 -> Harris Score, 1 -> FAST Score			
+ORBextractor.nScoreType: 1
+
+# ORB Extractor: Fast threshold for ORB-SLAM 2
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+# Constant Velocity Motion Model (0 - disabled, 1 - enabled [recommended])
+UseMotionModel: 1
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#---------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize:2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+

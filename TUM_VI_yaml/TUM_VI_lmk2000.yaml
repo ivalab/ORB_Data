@@ -1,0 +1,85 @@
+%YAML:1.0
+
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# for camera model 2 used in the obs computation
+# Camera2.f: 2.13895894409
+# Camera2.k1: 0
+# Camera2.k2: 0
+# Camera2.cx: 254.93170605935475
+# Camera2.cy: 256.8974428996504
+# Camera2.dx: 0.0112
+# Camera2.dy: 0.01120030321
+Camera2.nCols: 512
+Camera2.nRows: 512
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 190.97847715128717
+Camera.fy: 190.9733070521226
+Camera.cx: 254.93170605935475
+Camera.cy: 256.8974428996504
+
+# Camera.distModel: equidistant
+# Camera.k1: 0.0034823894022493434
+# Camera.k2: 0.0007150348452162257
+# Camera.k3: -0.0020532361418706202
+# Camera.k4: 0.00020293673591811182
+
+Camera.k1: -0.281689076715273
+Camera.k2: 0.079974594293477
+Camera.p1: -1.125425162878207e-06
+Camera.p2: 4.452228462270882e-06
+# Camera.k3: -0.009931375712379
+
+# Camera frames per second 
+Camera.fps: 20.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 2000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold for ORB-SLAM 1 (lower less restrictive)     
+ORBextractor.fastTh: 20
+
+# ORB Extractor: Score to sort features. 0 -> Harris Score, 1 -> FAST Score     
+ORBextractor.nScoreType: 1
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+# Constant Velocity Motion Model (0 - disabled, 1 - enabled [recommended])
+UseMotionModel: 1
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#---------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize:2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+

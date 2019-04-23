@@ -1,0 +1,142 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 1410.7706194391533
+Camera.fy: 1408.636310071006
+Camera.cx: 961.2948729792091
+Camera.cy: 596.2603136080197
+
+# Camera.distmodel: radtan
+# Camera.k1: -0.16148333271409462
+# Camera.k2: 0.08822022805146693
+# Camera.p1: -0.0003469019256938605
+# Camera.p2: -0.0003744391253100623
+
+
+Camera2.nCols: 1920
+Camera2.nRows: 1200
+
+
+# Camera frames per second 
+Camera.fps: 30.0
+
+
+# stereo baseline times fx
+Camera.bf:  6.236146539104867
+
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 35
+
+
+#--------------------------------------------------------------------------------------------
+# Stereo Rectification. Only if you need to pre-rectify the images.
+# Camera.fx, .fy, etc must be the same as in LEFT.P
+#--------------------------------------------------------------------------------------------
+LEFT.height: 1200
+LEFT.width: 1920
+# LEFT.D: !!opencv-matrix
+#    rows: 1
+#    cols: 5
+#    dt: d
+#    data:[-0.281689076715273, 0.079974594293477, -1.125425162878207e-06, 4.452228462270882e-06, -0.009931375724266]
+LEFT.D: !!opencv-matrix
+   rows: 1
+   cols: 4
+   dt: d
+   data:[-0.16148333271409462, 0.08822022805146693, -0.0003469019256938605, -0.0003744391253100623]
+LEFT.K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [1410.7706194391533, 0.0, 961.2948729792091, 0.0, 1408.636310071006, 596.2603136080197, 0.0, 0.0, 1.0]
+LEFT.R:  !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+LEFT.P:  !!opencv-matrix
+   rows: 3
+   cols: 4
+   dt: d
+   data: [1410.7706194391533, 0.0, 961.2948729792091, 0, 0, 1408.636310071006, 596.2603136080197, 0, 0, 0, 1, 0]
+
+RIGHT.height: 1200
+RIGHT.width: 1920
+# RIGHT.D: !!opencv-matrix
+#    rows: 1
+#    cols: 5
+#    dt: d
+#    data:[-0.280793726332462, 0.079274707421008, 4.426784331207253e-06, 1.072164947980289e-05, -0.009776810579779]
+RIGHT.D: !!opencv-matrix
+   rows: 1
+   cols: 4
+   dt: d
+   data:[-0.1616598809900206, 0.0965457113524826, -0.00033065393288583085, 0.00018256238181637527]
+RIGHT.K: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [1413.0712660547053, 0.0, 982.6580788888834, 0.0, 1414.4908234698487, 612.8510511314981, 0.0, 0.0, 1]
+RIGHT.R:  !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.517941651203050, -0.001882824483962, 0.855413876974778, -4.853662773104003e-04, 0.999996769831518, 0.002494944109134, -0.855415811385688, -0.001707424520571, 0.517939064304742]
+RIGHT.P:  !!opencv-matrix
+   rows: 3
+   cols: 4
+   dt: d
+   data: [61.71988851747925, 0, 250.7152718335446, -6.236146539104867, 0, 61.71988851747925, 255.5425540903479, 0, 0, 0, 1, 0]
+
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 2000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid   
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid  
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold for ORB-SLAM 1 (lower less restrictive)     
+ORBextractor.fastTh: 5 # 20
+
+# ORB Extractor: Score to sort features. 0 -> Harris Score, 1 -> FAST Score     
+ORBextractor.nScoreType: 1
+
+# ORB Extractor: Fast threshold for ORB-SLAM 2
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast     
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+# Constant Velocity Motion Model (0 - disabled, 1 - enabled [recommended])
+UseMotionModel: 1
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#---------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize:2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+

@@ -1,0 +1,54 @@
+%YAML:1.0
+
+# Camera Parameters. Adjust them!
+# for camera model 2 used in the obs computation
+Camera2.f: 8.0512
+Camera2.k1: 0.0
+Camera2.k2: 0.0
+Camera2.cx: 607.1928 
+Camera2.cy: 185.2157
+Camera2.dx: 0.0112
+Camera2.dy: 0.0112
+Camera2.nCols: 1241
+Camera2.nRows: 376
+
+# Images are: 376x1241
+# Camera calibration parameters (OpenCV) 
+Camera.fx: 718.856
+Camera.fy: 718.856
+Camera.cx: 607.1928
+Camera.cy: 185.2157
+
+# Camera distortion paremeters (OpenCV) --
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+
+# Camera frames per second 
+Camera.fps: 10.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+#--------------------------------------------------------------------------------------------
+### Changing the parameters below could seriously degradate the performance of the system
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 1500
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold (lower less restrictive)			
+ORBextractor.fastTh: 20
+
+
+# ORB Extractor: Score to sort features. 0 -> Harris Score, 1 -> FAST Score			
+ORBextractor.nScoreType: 1
+
+# Constant Velocity Motion Model (0 - disabled, 1 - enabled [recommended])
+UseMotionModel: 1

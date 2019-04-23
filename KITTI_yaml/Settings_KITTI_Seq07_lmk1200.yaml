@@ -1,0 +1,61 @@
+%YAML:1.0
+
+ObsThresPath: ../ORB_Data/KITTI_ObsThres_Regressed_Lapse_1/07_obs.txt
+GTPosePath: ../ORB_Data/KITTI_POSE_GT/07_tum.txt
+
+# Camera Parameters. Adjust them!
+# for camera model 2 used in the obs computation
+Camera2.f: 7.91942144
+Camera2.k1: 0.0
+Camera2.k2: 0.0
+Camera2.cx: 601.8873
+Camera2.cy: 183.1104
+Camera2.dx: 0.0112
+Camera2.dy: 0.0112
+Camera2.nCols: 1226
+Camera2.nRows: 370
+
+# Images are: 376x1241
+# Camera calibration parameters (OpenCV) 
+Camera.fx: 707.0912
+Camera.fy: 707.0912
+Camera.cx: 601.8873
+Camera.cy: 183.1104
+
+# Camera distortion paremeters (OpenCV) --
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+
+# Camera frames per second 
+Camera.fps: 10.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+#--------------------------------------------------------------------------------------------
+### Changing the parameters below could seriously degradate the performance of the system
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 1200
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+ORBextractor.fastTh: 20
+
+# ORB Extractor: Score to sort features. 0 -> Harris Score, 1 -> FAST Score			
+ORBextractor.nScoreType: 1
+
+# Constant Velocity Motion Model (0 - disabled, 1 - enabled [recommended])
+UseMotionModel: 1
