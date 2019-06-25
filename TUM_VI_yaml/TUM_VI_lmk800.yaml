@@ -22,17 +22,16 @@ Camera.fy: 190.9733070521226
 Camera.cx: 254.93170605935475
 Camera.cy: 256.8974428996504
 
-# Camera.distModel: equidistant
-# Camera.k1: 0.0034823894022493434
-# Camera.k2: 0.0007150348452162257
-# Camera.k3: -0.0020532361418706202
-# Camera.k4: 0.00020293673591811182
+Camera.k1: 0.0034823894022493434
+Camera.k2: 0.0007150348452162257
+Camera.k3: -0.0020532361418706202
+Camera.k4: 0.00020293673591811182
 
-Camera.k1: -0.281689076715273
-Camera.k2: 0.079974594293477
-Camera.p1: -1.125425162878207e-06
-Camera.p2: 4.452228462270882e-06
-Camera.k3: -0.009931375712379
+#Camera.k1: -0.281689076715273
+#Camera.k2: 0.079974594293477
+#Camera.p1: -1.125425162878207e-06
+#Camera.p2: 4.452228462270882e-06
+#Camera.k3: -0.009931375712379
 
 # Camera frames per second 
 Camera.fps: 20.0
@@ -75,7 +74,7 @@ UseMotionModel: 1
 Viewer.KeyFrameSize: 0.05
 Viewer.KeyFrameLineWidth: 1
 Viewer.GraphLineWidth: 0.9
-Viewer.PointSize:2
+Viewer.PointSize: 2
 Viewer.CameraSize: 0.08
 Viewer.CameraLineWidth: 3
 Viewer.ViewpointX: 0

@@ -4,10 +4,6 @@
 # Camera Parameters. Adjust them!
 #--------------------------------------------------------------------------------------------
 
-# for camera model 2 used in the obs computation
-Camera2.nCols: 1241
-Camera2.nRows: 376
-
 # Camera calibration and distortion parameters (OpenCV) 
 Camera.fx: 718.856
 Camera.fy: 718.856

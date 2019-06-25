@@ -4,10 +4,6 @@
 # Camera Parameters. Adjust them!
 #--------------------------------------------------------------------------------------------
 
-# for camera model 2 used in the obs computation
-Camera2.nCols: 1241
-Camera2.nRows: 376
-
 # Camera calibration and distortion parameters (OpenCV) 
 Camera.fx: 721.5377
 Camera.fy: 721.5377
@@ -20,8 +16,8 @@ Camera.k2: 0.0
 Camera.p1: 0.0
 Camera.p2: 0.0
 
-Camera.width: 1241
-Camera.height: 376
+Camera.width: 1242
+Camera.height: 375
 
 # Camera frames per second 
 Camera.fps: 10.0
@@ -39,8 +35,8 @@ ThDepth: 40
 # Stereo Rectification. Only if you need to pre-rectify the images.
 # Camera.fx, .fy, etc must be the same as in LEFT.P
 #--------------------------------------------------------------------------------------------
-LEFT.height: 376
-LEFT.width: 1241
+LEFT.height: 375
+LEFT.width: 1242
 LEFT.D: !!opencv-matrix
    rows: 1
    cols: 5
@@ -62,8 +58,8 @@ LEFT.P:  !!opencv-matrix
    dt: d
    data: [721.5377, 0.0, 609.5593, 0.0, 0.0, 721.5377, 172.854, 0.0, 0.0, 0.0, 1.0, 0.0]
 
-RIGHT.height: 376
-RIGHT.width: 1241
+RIGHT.height: 375
+RIGHT.width: 1242
 RIGHT.D: !!opencv-matrix
    rows: 1
    cols: 5
@@ -111,7 +107,7 @@ ORBextractor.minThFAST: 7
 Viewer.KeyFrameSize: 0.05
 Viewer.KeyFrameLineWidth: 1
 Viewer.GraphLineWidth: 0.9
-Viewer.PointSize:2
+Viewer.PointSize: 2
 Viewer.CameraSize: 0.08
 Viewer.CameraLineWidth: 3
 Viewer.ViewpointX: 0
