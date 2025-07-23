@@ -1,0 +1,79 @@
+%YAML:1.0
+
+# imu intrinsics
+gyroscope_noise_density:  0.000182936867769
+gyroscope_random_walk: 2.84078581073e-05
+accelerometer_noise_density: 0.00111496108364
+accelerometer_random_walk: 0.000276384606561
+
+# camera intrinsics
+depth_factor: 1000 # values in meters scaled by 1000
+
+cam_width: 640
+cam_height: 480
+cam_k: !!opencv-matrix
+  rows: 4
+  cols: 1
+  dt: d
+  data: [386.52199190267083, 387.32300428823663, 326.5103569741365, 237.40293732598795]
+cam_d: !!opencv-matrix
+  rows: 4
+  cols: 1
+  dt: d
+  data: [-0.04604118637879282, 0.03505887527496214, 0.0001787943036668921, -0.00024723627967045646]
+
+# camera-imu extrinsics
+# transform a point from IMU frame to CAM frame
+T_ItoC: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: d
+  data: [
+    0.9999691, 0.00720362, -0.00314765, -0.02707507,
+    -0.0071841, 0.99995517, 0.0061682, -0.004337,
+    0.00319195, -0.0061454, 0.99997602, -0.01595186,
+    0., 0., 0., 1.]
+
+timeshift_CtoI: -0.0097648780485 # [s] (t_imu = t_cam + shift)
+
+
+# color-depth extrinsics
+# transform a point from depth CAM frame to color CAM frame
+T_DtoC: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: d
+  data: [
+    1., 0., 0., 0.,
+    0., 1., 0., 0.,
+    0., 0., 1., 0.,
+    0., 0., 0., 1.]
+
+# wheel odometer-camera extrinsics
+# transform a point from CAM frame to wheel odometer frame
+
+# high
+T_CHtoW: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: d
+  data: [0.013246,  0.0521412, 0.9982324, 0.28,
+        -0.9962321, 0.0610127, 0.0024175, 0,
+        -0.05647427, -0.9950674, 0.0591213, 0.20,
+        0, 0, 0, 1]
+
+# low
+T_CLtoW: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: d
+  data: [-0.00477153, 0.0888742, 0.995711, 0.369117, 
+        -0.99571, 0.0665738, -0.018348, 0.0130432, 
+        -0.0637357, -0.99188, 0.094639, 0.016175, 
+        0, 0, 0, 1]
+
+
+
+# wheel odometer intrinsics
+wheel_r: 0.06
+wheel_baseline: 0.28
