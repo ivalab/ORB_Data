@@ -4,20 +4,18 @@
 # Camera Parameters. Adjust them!
 #--------------------------------------------------------------------------------------------
 
-Camera.type: "PinHole"
-
 # Camera calibration and distortion parameters (OpenCV) 
-Camera.fx: 386.52199190267083
-Camera.fy: 387.32300428823663
-Camera.cx: 326.5103569741365
-Camera.cy: 237.40293732598795
+Camera.fx: 415.69219381653056
+Camera.fy: 415.69219381653056
+Camera.cx: 360.0
+Camera.cy: 240.0
 
 # Camera.distmodel: radtan
-Camera.k1: -0.04604118637879282
-Camera.k2: 0.03505887527496214
-Camera.k3: 0.0
-Camera.p1: 0.0001787943036668921
-Camera.p2: -0.00024723627967045646
+Camera.k1: -0.05755264312028885
+Camera.k2: 0.07085355371236801
+Camera.k3: -0.0007177330553531647
+Camera.p1: 0.00019287563918624073
+Camera.p2: -0.022710571065545082
 
 Camera.width: 640
 Camera.height: 480
@@ -25,16 +23,16 @@ Camera.height: 480
 # Camera frames per second 
 Camera.fps: 30.0
 
-DepthMapFactor: 1000.0
-
-# # stereo baseline times fx
-Camera.bf: 41.56
+# stereo baseline times fx
+Camera.bf: 36.56
 
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
-Camera.RGB: 0
+Camera.RGB: 1
 
 # Close/Far threshold. Baseline times.
-ThDepth: 35.0
+ThDepth: 35
+
+DepthMapFactor: 1000.0 # 5000.0
 
 #--------------------------------------------------------------------------------------------
 # ORB Parameters
