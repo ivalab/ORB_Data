@@ -5,10 +5,10 @@
 #--------------------------------------------------------------------------------------------
 
 # Camera calibration and distortion parameters (OpenCV) 
-Camera.fx: 378.7210693359375
-Camera.fy: 378.7210693359375
-Camera.cx: 324.4961853027344
-Camera.cy: 239.1063690185547
+Camera.fx: 610.7184448242188
+Camera.fy: 610.9885864257812
+Camera.cx: 321.77386474609375
+Camera.cy: 243.8618621826172
 
 # Camera.distmodel: radtan
 # Camera.k1: 0.0
@@ -27,7 +27,7 @@ Camera.fps: 30.0
 Camera.bf: 18.900604248046875
 
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
-Camera.RGB: 0
+Camera.RGB: 1
 
 # Close/Far threshold. Baseline times.
 ThDepth: 35
